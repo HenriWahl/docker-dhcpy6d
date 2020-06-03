@@ -16,6 +16,7 @@ RUN cd /tmp && git clone https://github.com/HenriWahl/dhcpy6d.git
 RUN cd /tmp/dhcpy6d &&\
     git checkout v${VERSION} &&\
     python ./setup.py install
+RUN rm -rf /tmp/dhcpy6d
 
 RUN useradd --system --user-group dhcpy6d
 
