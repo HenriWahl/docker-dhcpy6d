@@ -1,7 +1,7 @@
 FROM python:3.7-slim
 LABEL maintainer=h.wahl@ifw-dresden.de
 
-ARG VERSION=1.0
+ARG VERSION=1.0.1
 
 RUN apt -y update && \
     apt -y upgrade

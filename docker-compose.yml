@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  dhcpy6d:
+    build:
+      context: .
+      args:
+        VERSION: 1.0
+    image: dhcpy6d
+    container_name: dhcpy6d
+    network_mode: host
+    volumes:
+      - ./dhcpy6d:/dhcpy6d
