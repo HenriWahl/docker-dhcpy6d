@@ -1,7 +1,7 @@
 FROM python:3.7-slim
 LABEL maintainer=h.wahl@ifw-dresden.de
 
-ARG VERSION=1.0.1
+ARG VERSION=1.0
 
 RUN apt -y update && \
     apt -y upgrade
@@ -30,6 +30,10 @@ RUN apt -y autoremove
 
 RUN useradd --system --user-group dhcpy6d
 
+COPY ./docker-entrypoint.sh /
+RUN chmod 755 /docker-entrypoint.sh
+
 WORKDIR /dhcpy6d
 
-CMD dhcpy6d --config dhcpy6d.conf --user dhcpy6d --group dhcpy6d
+#CMD dhcpy6d --config dhcpy6d.conf --user dhcpy6d --group dhcpy6d
+ENTRYPOINT ["/docker-entrypoint.sh"]
