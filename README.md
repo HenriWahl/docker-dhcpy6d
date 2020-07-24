@@ -13,10 +13,11 @@ For a simple test run the network interface should be set.
 
 If SQLite is choosen as storage for the client leases the delivered `/dhcpy6d/volatile.sqlite` might be used.
 
-To really deliver addresses to clients the option `really_do_it` has to be set to `yes`.
-
 As mentioned above - most useful when being run with `--network host` parameter or `network_mode: host` in `docker-compose.yml` file.
 Otherwise there is no way the client MAC addresses could be transmitted.
+
+**Attention:** to really deliver addresses to clients the option `really_do_it` has to be set to `yes`.
+This is a safety measure to avoid chaos - there still is plenty of it.
 
 ### docker run
 
