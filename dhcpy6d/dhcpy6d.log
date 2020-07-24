@@ -1,4 +1,0 @@
-2020-07-23 14:15:51,474 dhcpy6d INFO Starting dhcpy6d daemon...
-2020-07-23 14:15:51,474 dhcpy6d INFO Server DUID: 000100015f199b97001999d7cd77
-2020-07-23 14:15:51,829 dhcpy6d INFO Running as user dhcpy6d (UID 999) and group dhcpy6d (GID 999)
-2020-07-23 14:15:51,829 dhcpy6d INFO Listening on interfaces: eno1
