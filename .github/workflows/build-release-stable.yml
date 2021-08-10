@@ -1,13 +1,13 @@
 
-name: build-release-latest
+name: build-release-stable
 on:
   push:
-    tags-ignore: 'v*'
-    branches: '**'
+  push:
+    tags: 'v*'
 
 env:
   repo: dhcpy6d
-  tag: latest
+  tag: ${{ env.GITHUB_REF }}
 
 jobs:
   build-and-push:
