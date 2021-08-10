@@ -25,6 +25,3 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.repo }}:${{ env.tag }}
-      - run: echo ${{ steps.docker_build.outputs.digest }}
-
-
