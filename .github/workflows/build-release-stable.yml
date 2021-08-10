@@ -6,7 +6,7 @@ on:
 
 env:
   repo: dhcpy6d
-  tag: ${{ env.GITHUB_REF }}
+  tag: ${{ github.ref }}
 
 jobs:
   build-and-push:
