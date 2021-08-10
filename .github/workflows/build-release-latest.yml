@@ -17,5 +17,5 @@ jobs:
       - uses: actions/checkout@v2
       - run: pwd
       - run: ls -l
-      - run: /usr/bin/docker build -t ${{ env.docker_user }}/${{ env.docker_repo }}:${{ env.docker_tag }}
+      - run: /usr/bin/docker build -t ${{ env.docker_user }}/${{ env.docker_repo }}:${{ env.docker_tag }} .
 
