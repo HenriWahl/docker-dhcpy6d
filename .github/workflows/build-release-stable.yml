@@ -17,6 +17,7 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
       - uses: docker/metadata-action@v3
+        id: meta
         with:
           images:
             ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.repo }}
