@@ -1,7 +1,7 @@
 FROM python:3.9-slim
 LABEL maintainer=henri@dhcpy6d.de
 
-ARG VERSION=1.1.0
+ARG VERSION=1.2.0
 
 RUN apt -y update && \
     apt -y upgrade
