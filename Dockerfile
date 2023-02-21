@@ -1,8 +1,7 @@
 FROM python:3.9-slim
 LABEL maintainer=henri@dhcpy6d.de
 
-ARG VERSION=1.2.1
-
+ARG VERSION=1.2.3
 RUN apt -y update && \
     apt -y upgrade
 RUN apt -y install gcc \
