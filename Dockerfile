@@ -7,7 +7,8 @@ RUN apt -y update && \
 RUN apt -y install gcc \
                    git \
                    libmariadb-dev-compat \
-                   libpq-dev
+                   libpq-dev \
+                   pkg-config
 
 RUN pip install distro \
                 dnspython \
@@ -25,7 +26,8 @@ RUN rm -rf /tmp/dhcpy6d
 RUN apt -y purge gcc \
                  git \
                  libmariadb-dev-compat \
-                 libpq-dev
+                 libpq-dev \
+                 pkg-config
 RUN apt -y autoremove
 
 RUN useradd --system --user-group dhcpy6d
