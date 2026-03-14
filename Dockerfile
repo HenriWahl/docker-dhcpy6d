@@ -8,13 +8,13 @@ RUN apt -y install gcc \
                    git \
                    libmariadb-dev-compat \
                    libpq-dev \
-                   pkg-config \
-                   python3-setuptools
+                   pkg-config
 
 RUN pip install distro \
                 dnspython \
                 mysqlclient \
-                psycopg2
+                psycopg2 \
+                setuptools
 
 RUN cd /tmp && \
     git clone https://github.com/HenriWahl/dhcpy6d.git
@@ -29,6 +29,7 @@ RUN apt -y purge gcc \
                  libmariadb-dev-compat \
                  libpq-dev \
                  pkg-config
+
 RUN apt -y autoremove
 
 RUN useradd --system --user-group dhcpy6d
