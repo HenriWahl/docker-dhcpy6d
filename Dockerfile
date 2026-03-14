@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.14-slim
 LABEL maintainer=henri@dhcpy6d.de
 
 ARG VERSION=1.6.0
