@@ -8,7 +8,8 @@ RUN apt -y install gcc \
                    git \
                    libmariadb-dev-compat \
                    libpq-dev \
-                   pkg-config
+                   pkg-config \
+                   python3-setuptools
 
 RUN pip install distro \
                 dnspython \
