@@ -47,7 +47,7 @@ COPY --from=build /var/log/dhcpy6d.log /var/log/dhcpy6d.log
 
 # add group and user
 RUN addgroup -S dhcpy6d &&\
-    adduser -S dhcpy6d -G dhcpy6d \
+    adduser -S dhcpy6d -G dhcpy6d
 # set user and group permissions
 RUN chown -R dhcpy6d:dhcpy6d /var/lib/dhcpy6d &&\
     chown -R dhcpy6d:dhcpy6d /var/log/dhcpy6d.log
