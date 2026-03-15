@@ -1,13 +1,14 @@
-version: '3'
-
 services:
   dhcpy6d:
     build:
       context: .
       args:
-        VERSION: 1.2.2
+        VERSION: 1.6.0
     image: dhcpy6d
     container_name: dhcpy6d
     network_mode: host
+    restart: unless-stopped
     volumes:
       - ./dhcpy6d:/dhcpy6d
+      # here is a good place for mounting a config file
+      #- dhcpy6d.conf:/etc/dhcpy6d.conf
