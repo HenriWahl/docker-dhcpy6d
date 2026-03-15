@@ -11,4 +11,5 @@ services:
     volumes:
       - ./dhcpy6d:/dhcpy6d
       # here is a good place for mounting a config file
+      # see https://dhcpy6d.de/documentation/config
       #- dhcpy6d.conf:/etc/dhcpy6d.conf
