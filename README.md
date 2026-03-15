@@ -2,6 +2,8 @@
 
 Dockerfile and related stuff for https://github.com/HenriWahl/dhcpy6d.
 
+See more details about *dhcpy6d* in its documentation at https://dhcpy6d.de/documentation
+
 Because the main feature of *dhcpy6d* is its access to the requesting clients MAC addresses,
 it makes no sense to run inside an own container network.
 
