@@ -1,36 +1,30 @@
-FROM python:3.14-slim
+FROM python:3.14-alpine AS build
 LABEL maintainer=henri@dhcpy6d.de
 
 ARG VERSION=1.6.0
-RUN apt -y update && \
-    apt -y upgrade
-RUN apt -y install gcc \
-                   git \
-                   libmariadb-dev-compat \
-                   libpq-dev \
-                   pkg-config
 
-RUN pip install distro \
-                dnspython \
-                mysqlclient \
-                psycopg2 \
-                setuptools
+RUN apk update &&\
+    apk upgrade --no-cache
+#
+#RUN apt -y update && \
+#    apt -y upgrade
 
-RUN cd /tmp && \
-    git clone https://github.com/HenriWahl/dhcpy6d.git
-RUN cd /tmp/dhcpy6d && \
-    git checkout v${VERSION} && \
-    python ./setup.py install
 
-# cleaning unneeded packages
-RUN rm -rf /tmp/dhcpy6d
-RUN apt -y purge gcc \
-                 git \
-                 libmariadb-dev-compat \
-                 libpq-dev \
-                 pkg-config
+#RUN apk add --no-cache git \
+#                       mariadb-dev \
+#                       postgresql18-dev
 
-RUN apt -y autoremove
+RUN apk add --no-cache git \
+                       py3-distro \
+                       py3-dnspython \
+                       py3-mysqlclient \
+                       py3-psycopg2 \
+                       py3-setuptools
+
+RUN git clone https://github.com/HenriWahl/dhcpy6d.git /tmp/dhcpy6d
+WORKDIR /tmp/dhcpy6d
+RUN git checkout v${VERSION} &&\
+    python setup.py install
 
 RUN useradd --system --user-group dhcpy6d
 
